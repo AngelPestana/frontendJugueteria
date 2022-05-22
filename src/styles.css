@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
+.text-primary {
+    color: #0266AE !important;
+}
+
+body {
+    background-color: #F6F6F6 !important;
+}
