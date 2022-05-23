@@ -7,3 +7,8 @@
     animation-duration: 1.0s; /* don't forget to set a duration! */
     color: #FFDD30 !important;
 }
+
+button {
+    background-color: #FFDD30 !important;
+    border-color: #FFDD30 !important;
+}

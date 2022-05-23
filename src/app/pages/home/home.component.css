@@ -1,0 +1,19 @@
+#carouselExampleIndicators .carousel-indicators [data-bs-target] {
+    width: 60px;
+    height: 60px;
+    text-indent: 0;
+    margin-bottom: 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+#carouselExampleIndicators .carousel-indicators [data-bs-target] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
