@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   ubicacionLogo: string = '../../../assets/img/logo/coppel2.png';
 
-  constructor() { }
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+  }
 
   ngOnInit(): void {
   }

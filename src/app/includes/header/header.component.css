@@ -1,4 +1,4 @@
-.container-fluid.py-4.px-5.wow.fadeIn {
+.container-fluid.py-4.px-5 {
     background-color: #FFDD30 !important;
 }
 
@@ -6,9 +6,41 @@ i {
     font-size: 1.8rem;
 }
 
-.navbar.navbar-expand-lg.bg-light.py-4.px-5 {
+.pequenio {
+    font-size: 1.0rem;
+}
+
+.navbar.navbar-expand-lg.bg-light.px-5 {
     background-color: #0266AE !important;
 }
+
+a.nav-link::before {
+    content: "";
+    height: 4px;
+    width: 0%;
+    background: #FFDD30;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.4s ease-out;
+}
+
+a.dropdown-item::before {/*Lo mismo pero con la diferencia del espacio*/
+    content: "";
+    height: 4px;
+    width: 0%;
+    background: #FFDD30;
+    position: absolute;
+    left: 0;
+    bottom: -0px;
+    transition: 0.4s ease-out;
+}
+
+.nav-item, .dropdown-menu li a.dropdown-item{
+    position: relative;
+}
+
+
 
 /*Hover submenu*/
 
@@ -24,5 +56,11 @@ En vez de usar este hover
 @media (hover: hover) {
     .dropdown:hover .dropdown-menu {
         display: block;
+    }
+    a.nav-link:hover::before {
+        width: 100%;
+    }
+    a.dropdown-item:hover::before{
+        width: 100%;
     }
 }
