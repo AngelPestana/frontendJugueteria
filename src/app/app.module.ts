@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './includes/header/header.component';
 import { FooterComponent } from './includes/footer/footer.component';
 import { ComoComprarComponent } from './pages/como-comprar/como-comprar.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
+import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ComoComprarComponent } from './pages/como-comprar/como-comprar.componen
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ComoComprarComponent
+    ComoComprarComponent,
+    AcercaDeComponent,
+    BeneficiosComponent
   ],
   imports: [
     BrowserModule,

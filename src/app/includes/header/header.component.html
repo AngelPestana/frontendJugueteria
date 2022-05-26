@@ -2,7 +2,7 @@
 <div class="container-fluid py-4 px-5">
     <div class="row align-items-center top-bar">
         <div class="col-lg-4 col-md-12 text-center">
-            <a class="navbar-brand text-center">
+            <a class="navbar-brand text-center" routerLink="/home">
                 <img [src]="ubicacionLogo" [alt]="ubicacionLogo" class="text-center" width="300px">
                 <h5 class="fw-bold text-primary m-0 mt-0">Juguetería</h5>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
@@ -45,7 +45,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-light px-5 sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inicio</a>
+        <a class="navbar-brand" routerLink="/home">Inicio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
