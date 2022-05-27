@@ -12,6 +12,7 @@ import { FooterComponent } from './includes/footer/footer.component';
 import { ComoComprarComponent } from './pages/como-comprar/como-comprar.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
+import { AccederComponent } from './pages/acceder/acceder.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
     FooterComponent,
     ComoComprarComponent,
     AcercaDeComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    AccederComponent
   ],
   imports: [
     BrowserModule,

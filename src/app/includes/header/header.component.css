@@ -40,6 +40,12 @@ a.dropdown-item::before {/*Lo mismo pero con la diferencia del espacio*/
     position: relative;
 }
 
+a.btn {
+    box-shadow: 0px 2px 0 #b1d3eb, 2px 4px 6px #74bcf0;
+    font-weight: 500;
+    transition: all 150ms linear;
+} 
+
 
 
 /*Hover submenu*/
@@ -62,5 +68,14 @@ En vez de usar este hover
     }
     a.dropdown-item:hover::before{
         width: 100%;
+    }
+    a.btn:hover {
+        background: #0266AE;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 1px 1px 2px rgb(255 255 255 / 20%);
+        color: #FFFFFF;
+        text-decoration: none;
+        text-shadow: -1px -1px 0 #74bcf0;
+        transition: all 250ms linear;
     }
 }
