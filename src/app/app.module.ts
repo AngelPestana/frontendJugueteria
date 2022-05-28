@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgwWowModule } from 'ngx-wow';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ComoComprarComponent } from './pages/como-comprar/como-comprar.componen
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 import { AccederComponent } from './pages/acceder/acceder.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { AccederComponent } from './pages/acceder/acceder.component';
     ComoComprarComponent,
     AcercaDeComponent,
     BeneficiosComponent,
-    AccederComponent
+    AccederComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,9 @@ import { AccederComponent } from './pages/acceder/acceder.component';
     NgwWowModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

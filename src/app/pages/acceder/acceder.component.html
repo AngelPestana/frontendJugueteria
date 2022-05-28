@@ -1,22 +1,38 @@
 <app-header></app-header>
-<div class="mx-auto mt-5 mb-5 card-oscuro p-5" style="width: 350px;">
-    <form>
-        <div class="mb-3">
+<div class="mx-auto mt-5 mb-5 card-oscuro p-3" style="width: 350px;">
+    <form novalidate [formGroup]="formulario">
+        <div class="mb-3 text-center">
             <i class="bi bi-person-circle"></i>
         </div>
         <div class="mb-3">
-            <h2 class="text-center">Acceda Aquí</h2>
+            <h2 class="text-center text-primary">Acceda Aquí</h2>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="exampleInputEmail1" class="form-label text-primary negritas">Correo</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="correo">
+            <div
+                *ngIf="formularioControl.correo.errors && (formularioControl.correo.dirty || formularioControl.correo.touched)">
+                <p class="form-text text-danger"
+                    *ngIf="formularioControl.correo.errors.required || formularioControl.correo.errors.minlength; else elseBlock">
+                    El email es requerido y no debe tener menos de 11 caracteres</p>
+                <ng-template #elseBlock>
+                    <p class="form-text text-danger" *ngIf="formularioControl.correo.errors.pattern">La dirección
+                        debe ser valida y requiere del "@"</p>
+                </ng-template>
+            </div>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label text-primary negritas">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="contrasenia">
+            <div
+                *ngIf="formularioControl.contrasenia.errors && (formularioControl.contrasenia.dirty || formularioControl.contrasenia.touched)">
+                <p class="form-text text-danger"
+                    *ngIf="formularioControl.contrasenia.errors.required || formularioControl.contrasenia.errors.minlength">
+                    La contraseña es requerida, debe tener entre 8 y 12 caracteres, tambien debe contener entre letras mayúsculas, minúsculas, números y de forma opcional los caracteres !?</p>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!formulario.valid" (click)="entrar()">Entrar</button>
     </form>
 </div>
 

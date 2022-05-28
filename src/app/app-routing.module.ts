@@ -5,6 +5,7 @@ import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 import { ComoComprarComponent } from './pages/como-comprar/como-comprar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   { 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'acceder',
     component: AccederComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
   }
 ];
 
