@@ -16,6 +16,10 @@ import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 import { AccederComponent } from './pages/acceder/acceder.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+import { AdministradoresComponent } from './pages/administracion/administradores/administradores.component';
+import { AsesoresComponent } from './pages/administracion/asesores/asesores.component';
+import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AcercaDeComponent,
     BeneficiosComponent,
     AccederComponent,
-    RegistroComponent
+    RegistroComponent,
+    AdministradoresComponent,
+    AsesoresComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DataTablesModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

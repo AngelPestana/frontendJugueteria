@@ -1,4 +1,4 @@
-export class Cliente {
+export class Administrador {
 
     id: number | undefined;
     nombre: string | undefined;
@@ -6,8 +6,6 @@ export class Cliente {
     telefono: string| undefined;
     correo: string| undefined;
     contraseña: string| undefined;
-    direccion: string| undefined;
-    idUsuario: number| undefined;
     idRol: number| undefined;
     created_at: string| undefined;
 }

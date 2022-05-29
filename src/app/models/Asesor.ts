@@ -1,4 +1,4 @@
-export class Cliente {
+export class Asesor {
 
     id: number | undefined;
     nombre: string | undefined;
@@ -6,7 +6,8 @@ export class Cliente {
     telefono: string| undefined;
     correo: string| undefined;
     contraseña: string| undefined;
-    direccion: string| undefined;
+    telefono2: string| undefined;
+    esActivo: number| undefined;
     idUsuario: number| undefined;
     idRol: number| undefined;
     created_at: string| undefined;

@@ -30,10 +30,13 @@
               "node_modules/animate.css/animate.min.css",
               "node_modules/wowjs/css/libs/animate.css",
               "node_modules/ngx-spinner/animations/ball-atom.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
             ],
             "scripts": [
-              "node_modules/wowjs/dist/wow.js"
+              "node_modules/wowjs/dist/wow.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js"
             ]
           },
           "configurations": {
