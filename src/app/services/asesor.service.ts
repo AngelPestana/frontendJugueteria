@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class AsesorService {
 
   url: string = 'http://localhost:8080/api/asesores';
+  url2: string = 'http://localhost:8080/api/asesores2';
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,17 @@ export class AsesorService {
       })
     };
     return this.http.get(this.url, httpOptions);
+  }
+
+  getAsesores2 () {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        //Siempre especificar el tipo de autorizacion
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    return this.http.get(this.url2, httpOptions);
   }
 
   getAsesor(id: string) {

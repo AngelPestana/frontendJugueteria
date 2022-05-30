@@ -22,6 +22,7 @@ export class AsesoresComponent implements OnInit {
   asesorPostSubscription: Subscription | any;
   asesorPutSubscription: Subscription | any;
   asesorDeteleSubscription: Subscription | any;
+  paginacion: any;
 
   constructor(private spinner: NgxSpinnerService, private as: AsesorService, private router: Router) { }
 
@@ -38,6 +39,7 @@ export class AsesoresComponent implements OnInit {
       }
     };
     this.obtenerAsesores();
+    this.obtenerAsesores2();
   }
 
   obtenerAsesores() {
@@ -53,6 +55,15 @@ export class AsesoresComponent implements OnInit {
       let mensajeErrorConEtiquetas = error.error.messages.error;
       let mensajeError = mensajeErrorConEtiquetas.replace(/<[^>]*>?/g, '');
       this.mensajeError2(mensajeError);
+    }));
+  }
+
+  obtenerAsesores2() {
+    this.asesoresGetSubscription = this.as.getAsesores2().subscribe((res: any) => {
+      console.log(res);
+      //this.paginacion = res.pager;
+    }, (error => {
+      console.log(error);
     }));
   }
 

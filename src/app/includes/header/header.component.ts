@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     this.nombre = '';
     this.id_rol = '';
-    this.router.navigate(['/acceso']);
+    this.router.navigate(['/acceder']);
     this.mensajeCerroSesionPorExpiracion();
   }
 
