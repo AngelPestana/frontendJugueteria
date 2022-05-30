@@ -51,7 +51,9 @@ export class AccederComponent implements OnInit {
     this.rps.postLogin(login).subscribe((res: any) => {
       //console.log(res);
       localStorage.setItem('token', res.Token);
+      localStorage.setItem('id', res.user.id);
       localStorage.setItem('nombre', res.user.nombre);
+      localStorage.setItem('apellidos', res.user.apellidos);
       localStorage.setItem('idRol', res.user.idRol);
       let date = new Date();
       let time = date.getTime();

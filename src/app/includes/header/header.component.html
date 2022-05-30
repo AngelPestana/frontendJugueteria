@@ -71,15 +71,14 @@
                         <li>
                             <h6 class="dropdown-header">Compras</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#">Compras</a></li>
-                        <li><a class="dropdown-item" href="#">Compras por Carrito</a></li>
+                        <li><a class="dropdown-item" routerLink="/compras">Compras</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
                             <h6 class="dropdown-header">Productos</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#">Juguetes</a></li>
+                        <li><a class="dropdown-item" routerLink="/productos">Juguetes</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -112,12 +111,6 @@
                         <li><a class="dropdown-item" href="#">Infantiles</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Destacados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Recientes</a>
-                </li>
             </ul>
             <ul class="navbar-nav justify-content-end">
                 <li class="m-1 nav-item">
@@ -125,6 +118,12 @@
                 </li>
                 <li class="m-1 nav-item">
                     <a routerLink="/registro" class="btn btn-light rounded-pill d-lg-block w-100">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active">
+                        <i class="bi bi-person-circle"></i>
+                        {{nombre}} {{apellidos}}
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"

@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="container mt-3 mb-3 text-center">
+        <div class="card-body">
+            <h4 class="card-title mb-3">Control Compras</h4>
+            <p class="card-text mb-3">
+                Aquí puede consultar, agregar, editar y eliminar a los compras.
+            </p>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop" (click)="entroEnAgregar()">Agregar</a>
+        </div>
+</div>
+
+<div class="container mt-3 mb-3 tabla p-3">
+    <div class="rounded table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover tabla-redondeada">
+            <thead class="tabla-title">
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha de la Compra</th>
+                    <th>Total</th>
+                    <th>Estado de Pago</th>
+                    <th>Cliente</th>
+                    <th>Fecha de creación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="compras?.length != 0">
+                <tr *ngFor="let compra of compras">
+                    <td>{{ compra.id }}</td>
+                    <td>{{ compra.fechaCompra }}</td>
+                    <td>{{ compra.total }}</td>
+                    <td [class]="colorEstado(compra.estadoPago)">{{ compra.estadoPago == 1 ? 'Aprobado' : 'Pendiente' }}</td>
+                    <td>{{ compra.Cliente }}</td>
+                    <td>{{ compra.created_at }}</td>
+                    <td>
+                        <a href="" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" (click)="entroEnGestion(compra.id)">
+                            <i class="bi bi-pencil-square"></i>
+                            Gestión</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="compras?.length == 0">
+                <tr>
+                    <td colspan="10">
+                        <h5 class="text-center">Sin datos en la tabla...</h5>                        
+                    </td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+</div>
+
+<app-footer></app-footer>

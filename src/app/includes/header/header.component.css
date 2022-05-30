@@ -46,6 +46,10 @@ a.btn {
     transition: all 150ms linear;
 } 
 
+.bi-person-circle {
+    font-size: 1.0rem;
+}
+
 
 
 /*Hover submenu*/

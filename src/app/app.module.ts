@@ -20,6 +20,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { AdministradoresComponent } from './pages/administracion/administradores/administradores.component';
 import { AsesoresComponent } from './pages/administracion/asesores/asesores.component';
 import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
+import { ProductosComponent } from './pages/administracion/productos/productos.component';
+import { ComprasComponent } from './pages/administracion/compras/compras.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ClientesComponent } from './pages/administracion/clientes/clientes.comp
     RegistroComponent,
     AdministradoresComponent,
     AsesoresComponent,
-    ClientesComponent
+    ClientesComponent,
+    ProductosComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
