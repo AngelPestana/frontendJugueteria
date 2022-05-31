@@ -22,6 +22,7 @@ import { AsesoresComponent } from './pages/administracion/asesores/asesores.comp
 import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
 import { ProductosComponent } from './pages/administracion/productos/productos.component';
 import { ComprasComponent } from './pages/administracion/compras/compras.component';
+import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ComprasComponent } from './pages/administracion/compras/compras.compone
     AsesoresComponent,
     ClientesComponent,
     ProductosComponent,
-    ComprasComponent
+    ComprasComponent,
+    VehiculosComponent
   ],
   imports: [
     BrowserModule,
