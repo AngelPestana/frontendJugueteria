@@ -3,3 +3,42 @@
     border-radius: 20px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.63);
 }
+
+.cards-productos {
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.63);
+}
+
+img {
+    border-radius: 20px;
+    transition:all 0.3s ease;
+}
+
+.btn-primary{
+    background-color: #0266AE;
+    border-color: #0266AE;
+}
+
+.page-link {
+    box-shadow: 0px 2px 0 #637583, 2px 4px 6px #325269;
+    font-weight: 500;
+    transition: all 150ms linear;
+}
+
+@media (hover: hover) {
+    .page-link:hover {
+        background: #FAECA7;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 1px 1px 2px rgba(92, 83, 83, 0.2);
+        color: #000000;
+        text-decoration: none;
+        text-shadow: -1px -1px 0 #e9f1f7;
+        transition: all 250ms linear;
+    }
+    img:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+}

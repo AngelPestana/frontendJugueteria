@@ -26,6 +26,7 @@ export class ProductosComponent implements OnInit {
 
   constructor(private spinner: NgxSpinnerService, private ps: ProductoService, private router: Router, private _sanitizer: DomSanitizer) { }
 
+  rutaImagenes = 'http://localhost/jugueteria/public/images/productos/';
   ngOnInit(): void {
     this.iniciarTabla();
   }
@@ -47,6 +48,8 @@ export class ProductosComponent implements OnInit {
       this.productos = res;
       //console.log(res);
       this.dtTrigger.next(0);
+      //console.log(this.productos[1].imagen);
+      //this.productos['imagen'] = this._sanitizer.bypassSecurityTrustResourceUrl(this.productos['imagen']);
       this.cerrarLoading();
     }, (error => {
       //console.log(error);
@@ -56,11 +59,11 @@ export class ProductosComponent implements OnInit {
       this.mensajeError2(mensajeError);
     }));
   }
-
+/*
   conversionImagen(imagen: string | any): SafeResourceUrl {
     return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + imagen);
   }
-
+*/
   mensajeError2(mensaje: string) {
     Swal.fire({
       icon: 'error',

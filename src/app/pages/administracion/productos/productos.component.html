@@ -31,7 +31,7 @@
                 <tr *ngFor="let producto of productos">
                     <td>{{ producto.id }}</td>
                     <td>
-                        <img [src]="conversionImagen(producto.imagen)" alt="imagen"
+                        <img src="{{rutaImagenes + producto.imagen}}" alt="imagen"
                         height="100px" width="100px" class="redondeado">
                     </td>
                     <td>{{ producto.nombre }}</td>
