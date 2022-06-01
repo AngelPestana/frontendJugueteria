@@ -4,6 +4,11 @@
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.63);
 }
 
+i {
+    color: #FFDD30;
+    font-size: 1.8rem;
+}
+
 .cards-productos {
     background-color: #F6F6F6;
     border-radius: 20px;
