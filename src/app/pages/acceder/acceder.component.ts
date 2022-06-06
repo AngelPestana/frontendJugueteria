@@ -45,7 +45,7 @@ export class AccederComponent implements OnInit {
     let login = new Login();
     login.correo = correo;
     login.contraseña = contrasenia;
-    console.log(login);
+    //console.log(login);
     //this.cerrarLoading();
     
     this.rps.postLogin(login).subscribe((res: any) => {

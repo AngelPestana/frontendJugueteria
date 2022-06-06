@@ -8,6 +8,7 @@ import { ClientesComponent } from './pages/administracion/clientes/clientes.comp
 import { ComprasComponent } from './pages/administracion/compras/compras.component';
 import { ProductosComponent } from './pages/administracion/productos/productos.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
+import { LanzadoresComponent } from './pages/categorias/lanzadores/lanzadores.component';
 import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.component';
 import { ComoComprarComponent } from './pages/como-comprar/como-comprar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'vehiculos',
     component: VehiculosComponent
+  },
+  {
+    path: 'lanzadores',
+    component: LanzadoresComponent
   }
 ];
 

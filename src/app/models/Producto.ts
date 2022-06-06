@@ -2,6 +2,7 @@ export class Producto {
 
     id: number | undefined;
     imagen: string | any;
+    nombreImagen: string | any;
     nombre: string| undefined;
     descripcion: string| undefined;
     precio: number| undefined;

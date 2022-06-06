@@ -4,6 +4,7 @@ import { NgwWowModule } from 'ngx-wow';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { ClientesComponent } from './pages/administracion/clientes/clientes.comp
 import { ProductosComponent } from './pages/administracion/productos/productos.component';
 import { ComprasComponent } from './pages/administracion/compras/compras.component';
 import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.component';
+import { LanzadoresComponent } from './pages/categorias/lanzadores/lanzadores.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.compo
     ClientesComponent,
     ProductosComponent,
     ComprasComponent,
-    VehiculosComponent
+    VehiculosComponent,
+    LanzadoresComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.compo
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
+    AlifeFileToBase64Module
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

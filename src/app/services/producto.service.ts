@@ -35,7 +35,18 @@ export class ProductoService {
     return this.http.get(url, httpOptions);
   }
 
-  getProducto(id: string) {
+  getProductosCategoriaLanzadores(url: string) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        //Siempre especificar el tipo de autorizacion
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    return this.http.get(url, httpOptions);
+  }
+
+  getProducto(id: number) {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
