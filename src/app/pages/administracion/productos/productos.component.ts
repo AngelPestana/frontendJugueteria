@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 export class ProductosComponent implements OnInit {
 
   aceptacionFile: string = 'image/*';
+  //validarEdicion: boolean = false;
   dire: string = '';
   dtOptions: DataTables.Settings = {};
   productos: Producto[] = [];
@@ -43,7 +44,7 @@ export class ProductosComponent implements OnInit {
         Validators.required, 
         Validators.minLength(3),
         Validators.maxLength(45),
-        Validators.pattern("[A-Za-z0-9]{3,45}")
+        Validators.pattern("[A-Za-z0-9 ]{3,45}")
       ]),
       imagen: new FormControl('', [
         Validators.required
@@ -52,7 +53,7 @@ export class ProductosComponent implements OnInit {
         Validators.required,
         Validators.minLength(15),
         Validators.maxLength(255),
-        Validators.pattern("[A-Za-z0-9]{3,45}")
+        Validators.pattern("[A-Za-z0-9 ]{3,255}")
       ]),
       precio: new FormControl('', [
         Validators.required,
@@ -245,6 +246,7 @@ export class ProductosComponent implements OnInit {
   presentandoDatos() {
     this.formulario.patchValue({
       //mandamos la imagen al formulario reactivo formcontrolname imagen
+      imagen: "",
       nombre: this.producto['nombre'],
       descripcion: this.producto['descripcion'],
       precio: this.producto['precio'],
@@ -253,6 +255,13 @@ export class ProductosComponent implements OnInit {
     });
     this.dire = 'data:image/jpeg;base64,' + this.producto['imagen'];
     this.cerrarLoading();
+  }
+
+  validacionEdicion():string {
+    if ((this.formulario.controls.imagen.status === 'INVALID' || this.formulario.controls.imagen.status === 'VALID') && this.formulario.controls.nombre.status === 'VALID' && this.formulario.controls.descripcion.status === 'VALID' && this.formulario.controls.precio.status === 'VALID' && this.formulario.controls.cantidad.status === 'VALID' && this.formulario.controls.categoria.status === 'VALID') {
+      return '';
+    }
+    return 'disabled';
   }
 
   get formularioControl() {//NO borrar

@@ -83,7 +83,6 @@
                     </div>
 
                     <div class="mb-4">
-                        <p *ngIf="estaEnGestion == true" class="text-warning">Para editar este producto, se requiere a fuerzas que envie una imagen, en caso de no querer cambiar la imagen entonces vuelva a mandar la misma</p>
                         <label for="imagen" class="form-label fs-base">Imagen</label>
                         <input type="file" [accept]="aceptacionFile" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"
                             formControlName="imagen">
@@ -154,7 +153,7 @@
 
                     <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="!formulario.valid"
                         (click)="agregarProducto()" *ngIf="estaEnGestion == false" data-bs-dismiss="modal">Agregar</button>
-                    <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="!formulario.valid"
+                    <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="validacionEdicion()"
                         (click)="editarProducto()" *ngIf="estaEnGestion == true" data-bs-dismiss="modal">Editar</button>
                     <button type="submit" class="btn btn-primary btn-lg w-100 mt-3" (click)="eliminarProducto()"
                         *ngIf="estaEnGestion == true" data-bs-dismiss="modal">Eliminar</button>
