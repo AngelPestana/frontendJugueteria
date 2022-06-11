@@ -128,6 +128,19 @@ export class VehiculosComponent implements OnInit {
     this.obtenerProductos();
   }
 
+  cortarCadena(cadena: string): string {
+    if (cadena.length > 50) {
+      return cadena.substring(0, 50) + '...';
+    } else {
+      return cadena;
+    }
+  }
+
+  agregarCarrito(producto): void {
+    //console.log(producto);
+    //this.ps.agregarCarrito(producto);
+  }
+
   get formularioControl() {//NO borrar
     return this.formulario.controls;
   }
