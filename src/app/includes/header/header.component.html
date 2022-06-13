@@ -125,6 +125,15 @@
                         {{nombre}} {{apellidos}}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-light w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                        <i class="bi bi-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{contador}}
+                        </span>
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,10 +141,13 @@
                     </a>
                     <ul class="dropdown-menu animate__animated animate__fadeIn animate__faster"
                         aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink="/como_comprar"><i class="bi bi-question-circle pequenio"></i> ¿Cómo Comprar?</a></li>
+                        <li><a class="dropdown-item" routerLink="/como_comprar"><i
+                                    class="bi bi-question-circle pequenio"></i> ¿Cómo Comprar?</a></li>
                         <li><a class="dropdown-item"><i class="bi bi-whatsapp pequenio"></i> +52 9711698979</a></li>
-                        <li><a class="dropdown-item"><i class="bi bi-telephone-outbound pequenio"></i> 0820-123-67838</a></li>
-                        <li><a class="dropdown-item" href="mailto:pestana0711@gmail.com"><i class="bi bi-envelope-check pequenio"></i> gmail</a></li>
+                        <li><a class="dropdown-item"><i class="bi bi-telephone-outbound pequenio"></i>
+                                0820-123-67838</a></li>
+                        <li><a class="dropdown-item" href="mailto:pestana0711@gmail.com"><i
+                                    class="bi bi-envelope-check pequenio"></i> gmail</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -152,3 +164,56 @@
         </div>
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-end borde" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Tu Carrito</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="list-group">
+            <a *ngFor="let producto of productos"
+                class="list-group-item list-group-item-action alert alert-dismissible fade show">
+                <div class="text-center">
+                    <img [src]="rutaImagenes + producto.imagen" alt="" height="100px" width="100px">
+                </div>
+                <div class="float-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{producto.nombre}}</h5>
+                    </div>
+                    <p class="mb-1">$ {{producto.precio}}</p>
+                    <small class="text-muted">Cant. Existencia {{producto.cantidad}}</small>
+                </div>
+                <div class="float-end">
+                <button type="button" class="btn text-reset" data-bs-dismiss="alert" aria-label="Close" (click)="eliminarProducto(producto)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </div>
+            </a>
+            <!--
+            <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small class="text-muted">And some muted small print.</small>
+                <button type="button" class="btn text-reset float-end" data-bs-dismiss="alert" aria-label="Close">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </a>
+            <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small class="text-muted">And some muted small print.</small>
+                <button type="button" class="btn text-reset float-end" data-bs-dismiss="alert" aria-label="Close">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </a>
+            -->
+        </div>
+    </div>
+</div>

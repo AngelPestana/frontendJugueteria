@@ -45,7 +45,7 @@
                         <p class="card-text text-center"><i class="bi bi-truck"></i> Envios a domicilio</p>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-primary float-start" (click)="agregarCarrito(producto)">
+                        <button type="button" class="btn btn-primary float-start" (click)="agregarCarrito(producto)" [disabled]="checarId(producto.id)">
                             <i class="bi bi-cart-plus"></i>
                         </button>
                         <button type="button" class="btn btn-primary float-end">

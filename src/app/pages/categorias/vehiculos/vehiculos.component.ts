@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Details } from 'src/app/models/Details';
 import { Producto } from 'src/app/models/Producto';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
@@ -25,7 +26,7 @@ export class VehiculosComponent implements OnInit {
   producto: Producto[] = [];
   details: Details | any;//por objeto
   numbers: number[] = [];
-  constructor(private ps: ProductoService, private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private ps: ProductoService, private spinner: NgxSpinnerService, private router: Router, private c: CarritoService) { }
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -139,10 +140,43 @@ export class VehiculosComponent implements OnInit {
   agregarCarrito(producto): void {
     //console.log(producto);
     //this.ps.agregarCarrito(producto);
+    /*
+    this.idsAgregados[this.contadorParaLosIDs] = producto.id;
+    this.contadorParaLosIDs++;
+    if (this.contador >= 20){
+      console.log("Ya no puedes agregar mas articulos kbron!!!!")
+    }else {
+      this.contador = this.contador + 1;
+      this.c.enviarContador(this.contador);
+    }*/
+    this.c.agregarProducto(producto);
+    console.log(this.c.obtenerProductos());
   }
 
   get formularioControl() {//NO borrar
     return this.formulario.controls;
+  }
+
+  checarId(id: number): boolean {
+    //haremos un foreach para los ids agregados del array
+    /*for (let i = 0; i < this.idsAgregados.length; i++) {
+      if (this.idsAgregados[i] == id) {
+        //si esto es verdad, entonces desactivame el boton
+        return true;
+      }
+    }
+    return false;*/
+    //Obtenemos los productos del servicio y comparamos con los ids agregados
+    let productos = this.c.obtenerProductos();
+    //usamos un foreach para iterar sobre los productos agregados en el arreglo e identificar si existe el id relacionado
+    for (let i = 0; i < productos.length; i++) {
+      if (productos[i]['id'] == id) {
+        //si esto es verdad, entonces desactivame el boton
+        return true;
+      }
+    }
+    return false;
+
   }
 
 }

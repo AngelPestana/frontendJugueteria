@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgwWowService } from 'ngx-wow';
+import { Producto } from 'src/app/models/Producto';
+import { CarritoService } from 'src/app/services/carrito.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,17 +11,29 @@ import Swal from 'sweetalert2';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  rutaImagenes = 'http://localhost/jugueteria/public/images/productos/';
   ubicacionLogo: string = '../../../assets/img/logo/coppel2.png';
   nombre: string | null = '';
   apellidos: string | null = '';
   id_rol: string | null = '';
+  contador: number = 0;
+  productos: Producto[] = [];
 
-  constructor(private wowService: NgwWowService, private router: Router) {
+  constructor(private wowService: NgwWowService, private router: Router, private c: CarritoService) {
     this.wowService.init();//No borrar si quieres animaciones del prro chems wow.js
   }
 
   ngOnInit(): void {
     this.valores();
+    this.getContador();
+    this.c.enviarContadorObservable.subscribe(res => {
+      this.contador = res;
+    });
+  }
+
+  getContador() {
+    this.contador = this.c.obtenerContador();
+    this.productos = this.c.obtenerProductos();
   }
 
   valores() {
@@ -56,6 +70,10 @@ export class HeaderComponent implements OnInit {
       icon: 'success',
       confirmButtonText: 'Aceptar'
     });
+  }
+
+  eliminarProducto(producto: Producto) {
+    this.c.eliminarProducto(producto);
   }
 
 }

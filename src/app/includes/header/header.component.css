@@ -50,6 +50,13 @@ a.btn {
     font-size: 1.0rem;
 }
 
+.bi.bi-cart {
+    font-size: 1.2rem;
+}
+
+a.btn i {
+    color : black;
+}
 
 
 /*Hover submenu*/
@@ -81,5 +88,9 @@ En vez de usar este hover
         text-decoration: none;
         text-shadow: -1px -1px 0 #74bcf0;
         transition: all 250ms linear;
+    }
+
+    a.btn:hover i{
+        color: #FFFFFF;
     }
 }
