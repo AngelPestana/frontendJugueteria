@@ -24,7 +24,7 @@ export class AdministradorService {
     return this.http.get(this.url, httpOptions);
   }
 
-  getAdministrador(id: string) {
+  getAdministrador(id: number) {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

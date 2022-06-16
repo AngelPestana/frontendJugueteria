@@ -58,6 +58,9 @@ a.btn i {
     color : black;
 }
 
+.borde {
+    border-radius: 20px;
+}
 
 /*Hover submenu*/
 

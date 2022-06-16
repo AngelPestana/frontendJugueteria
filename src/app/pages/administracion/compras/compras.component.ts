@@ -78,10 +78,6 @@ export class ComprasComponent implements OnInit {
     })
   }
 
-  entroEnAgregar() {
-
-  }
-
   entroEnGestion(id: number | undefined) {
 
   }

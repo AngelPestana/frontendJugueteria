@@ -25,6 +25,10 @@ import { ProductosComponent } from './pages/administracion/productos/productos.c
 import { ComprasComponent } from './pages/administracion/compras/compras.component';
 import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.component';
 import { LanzadoresComponent } from './pages/categorias/lanzadores/lanzadores.component';
+import { CocinasComponent } from './pages/categorias/cocinas/cocinas.component';
+import { ConstruccionComponent } from './pages/categorias/construccion/construccion.component';
+import { MuniecosComponent } from './pages/categorias/muniecos/muniecos.component';
+import { InfantilesComponent } from './pages/categorias/infantiles/infantiles.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { LanzadoresComponent } from './pages/categorias/lanzadores/lanzadores.co
     ProductosComponent,
     ComprasComponent,
     VehiculosComponent,
-    LanzadoresComponent
+    LanzadoresComponent,
+    CocinasComponent,
+    ConstruccionComponent,
+    MuniecosComponent,
+    InfantilesComponent
   ],
   imports: [
     BrowserModule,

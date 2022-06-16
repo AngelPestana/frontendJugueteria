@@ -70,10 +70,6 @@ export class ClientesComponent implements OnInit {
     })
   }
 
-  entroEnAgregar() {
-
-  }
-
   entroEnGestion(id: number | undefined) {
 
   }

@@ -8,11 +8,15 @@ import { ClientesComponent } from './pages/administracion/clientes/clientes.comp
 import { ComprasComponent } from './pages/administracion/compras/compras.component';
 import { ProductosComponent } from './pages/administracion/productos/productos.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
+import { CocinasComponent } from './pages/categorias/cocinas/cocinas.component';
 import { LanzadoresComponent } from './pages/categorias/lanzadores/lanzadores.component';
 import { VehiculosComponent } from './pages/categorias/vehiculos/vehiculos.component';
 import { ComoComprarComponent } from './pages/como-comprar/como-comprar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { ConstruccionComponent } from './pages/categorias/construccion/construccion.component';
+import { MuniecosComponent } from './pages/categorias/muniecos/muniecos.component';
+import { InfantilesComponent } from './pages/categorias/infantiles/infantiles.component';
 
 const routes: Routes = [
   { 
@@ -71,6 +75,22 @@ const routes: Routes = [
   {
     path: 'lanzadores',
     component: LanzadoresComponent
+  },
+  {
+    path: 'cocinas',
+    component: CocinasComponent
+  },
+  {
+    path: 'construccion',
+    component: ConstruccionComponent
+  },
+  {
+    path: 'muniecos',
+    component: MuniecosComponent
+  },
+  {
+    path: 'infantiles',
+    component: InfantilesComponent
   }
 ];
 

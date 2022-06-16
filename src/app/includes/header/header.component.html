@@ -93,22 +93,22 @@
                         </li>
                         <li><a class="dropdown-item" routerLink="/vehiculos">Autos, Vehículos y Pistas</a></li>
                         <li><a class="dropdown-item" routerLink="/lanzadores">Lanzadores y Pistolas</a></li>
-                        <li><a class="dropdown-item" href="#">Juegos de Cocinas</a></li>
+                        <li><a class="dropdown-item" routerLink="/cocinas">Juegos de Cocinas</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
                             <h6 class="dropdown-header">Primera Infancia</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#">Construcción y Bloques</a></li>
-                        <li><a class="dropdown-item" href="#">Muñecas, Muñecos y Bebotes</a></li>
+                        <li><a class="dropdown-item" routerLink="/construccion">Construcción y Bloques</a></li>
+                        <li><a class="dropdown-item" routerLink="/muniecos">Muñecas, Muñecos y Bebotes</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
                             <h6 class="dropdown-header">Juegos de Mesa</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#">Infantiles</a></li>
+                        <li><a class="dropdown-item" routerLink="/infantiles">Infantiles</a></li>
                     </ul>
                 </li>
             </ul>
@@ -167,12 +167,12 @@
 
 <div class="offcanvas offcanvas-end borde" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Tu Carrito</h5>
+        <h5 id="offcanvasRightLabel">Tu Carrito de Compras</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="list-group">
-            <a *ngFor="let producto of productos"
+            <div *ngFor="let producto of productos"
                 class="list-group-item list-group-item-action alert alert-dismissible fade show">
                 <div class="text-center">
                     <img [src]="rutaImagenes + producto.imagen" alt="" height="100px" width="100px">
@@ -185,35 +185,15 @@
                     <small class="text-muted">Cant. Existencia {{producto.cantidad}}</small>
                 </div>
                 <div class="float-end">
-                <button type="button" class="btn text-reset" data-bs-dismiss="alert" aria-label="Close" (click)="eliminarProducto(producto)">
-                    <i class="bi bi-trash-fill"></i>
-                </button>
+                    <button type="button" class="btn text-reset" data-bs-dismiss="alert" aria-label="Close"
+                        (click)="eliminarProducto(producto)">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                </div>
             </div>
-            </a>
-            <!--
-            <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small class="text-muted">And some muted small print.</small>
-                <button type="button" class="btn text-reset float-end" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="bi bi-trash-fill"></i>
-                </button>
-            </a>
-            <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small class="text-muted">And some muted small print.</small>
-                <button type="button" class="btn text-reset float-end" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="bi bi-trash-fill"></i>
-                </button>
-            </a>
-            -->
+            <div *ngIf="productos.length == 0">
+                <h5 class="text-center text-muted">Sin jueguetes en el carrito!!</h5>
+            </div>
         </div>
     </div>
 </div>

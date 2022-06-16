@@ -9,18 +9,18 @@ import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-lanzadores',
-  templateUrl: './lanzadores.component.html',
-  styleUrls: ['./lanzadores.component.css']
+  selector: 'app-muniecos',
+  templateUrl: './muniecos.component.html',
+  styleUrls: ['./muniecos.component.css']
 })
-export class LanzadoresComponent implements OnInit {
+export class MuniecosComponent implements OnInit {
 
   formulario: any;
   estaBuscando = false;
   buscar = '';
-  urlBaseBusqueda = 'http://localhost:8080/api/productos/lanzadores/busqueda2';
-  urlBase = 'http://localhost:8080/api/productos/lanzadores';
-  url = 'http://localhost:8080/api/productos/lanzadores';
+  urlBaseBusqueda = 'http://localhost:8080/api/productos/muniecos/busqueda5';
+  urlBase = 'http://localhost:8080/api/productos/muniecos';
+  url = 'http://localhost:8080/api/productos/muniecos';
   rutaImagenes = 'http://localhost/jugueteria/public/images/productos/';
   productos: Producto[] = [];
   producto: Producto[] = [];
@@ -48,7 +48,7 @@ export class LanzadoresComponent implements OnInit {
     this.estaBuscando = false;
     this.formulario.reset();
     this.spinner.show();//Mostramos el loading
-    this.ps.getProductosCategoriaLanzadores(this.urlBase).subscribe((res: any) => {
+    this.ps.getProductosCategoriaVehiculos(this.urlBase).subscribe((res: any) => {
       this.productos = res.productos;
       this.details = res.getDetails;
       //console.log(this.productos);
@@ -68,7 +68,7 @@ export class LanzadoresComponent implements OnInit {
 
   obtenerProductos() {
     this.spinner.show();//Mostramos el loading
-    this.ps.getProductosCategoriaLanzadores(this.url).subscribe((res: any) => {
+    this.ps.getProductosCategoriaVehiculos(this.url).subscribe((res: any) => {
       this.productos = res.productos;
       this.details = res.getDetails;
       //console.log(this.productos);
@@ -137,20 +137,6 @@ export class LanzadoresComponent implements OnInit {
     }
   }
 
-  checarId(id: number): boolean {
-    //Obtenemos los productos del servicio y comparamos con los ids agregados
-    let productos = this.c.obtenerProductos();
-    //usamos un foreach para iterar sobre los productos agregados en el arreglo e identificar si existe el id relacionado
-    for (let i = 0; i < productos.length; i++) {
-      if (productos[i]['id'] == id) {
-        //si esto es verdad, entonces desactivame el boton
-        return true;
-      }
-    }
-    return false;
-
-  }
-
   agregarCarrito(producto): void {
     if (this.c.obtenerContador() < 30){
       this.c.agregarProducto(producto);
@@ -160,6 +146,7 @@ export class LanzadoresComponent implements OnInit {
       let mensaje = 'No puedes agregar más de 30 productos al carrito';
       this.mensajeError(mensaje);
     }
+    
   }
 
   mensajeError(mensaje: string) {
@@ -173,6 +160,20 @@ export class LanzadoresComponent implements OnInit {
 
   get formularioControl() {//NO borrar
     return this.formulario.controls;
+  }
+
+  checarId(id: number): boolean {
+    //Obtenemos los productos del servicio y comparamos con los ids agregados
+    let productos = this.c.obtenerProductos();
+    //usamos un foreach para iterar sobre los productos agregados en el arreglo e identificar si existe el id relacionado
+    for (let i = 0; i < productos.length; i++) {
+      if (productos[i]['id'] == id) {
+        //si esto es verdad, entonces desactivame el boton
+        return true;
+      }
+    }
+    return false;
+
   }
 
 }

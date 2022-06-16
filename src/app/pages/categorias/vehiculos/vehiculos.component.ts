@@ -138,19 +138,24 @@ export class VehiculosComponent implements OnInit {
   }
 
   agregarCarrito(producto): void {
-    //console.log(producto);
-    //this.ps.agregarCarrito(producto);
-    /*
-    this.idsAgregados[this.contadorParaLosIDs] = producto.id;
-    this.contadorParaLosIDs++;
-    if (this.contador >= 20){
-      console.log("Ya no puedes agregar mas articulos kbron!!!!")
+    if (this.c.obtenerContador() < 30){
+      this.c.agregarProducto(producto);
+      console.log(this.c.obtenerProductos());
+      console.log('contador: ' + this.c.obtenerContador());
     }else {
-      this.contador = this.contador + 1;
-      this.c.enviarContador(this.contador);
-    }*/
-    this.c.agregarProducto(producto);
-    console.log(this.c.obtenerProductos());
+      let mensaje = 'No puedes agregar más de 30 productos al carrito';
+      this.mensajeError(mensaje);
+    }
+    
+  }
+
+  mensajeError(mensaje: string) {
+    Swal.fire({
+      icon: 'error',
+      title: mensaje,
+      confirmButtonText: 'Aceptar',
+      allowOutsideClick: false
+    });
   }
 
   get formularioControl() {//NO borrar
@@ -158,14 +163,6 @@ export class VehiculosComponent implements OnInit {
   }
 
   checarId(id: number): boolean {
-    //haremos un foreach para los ids agregados del array
-    /*for (let i = 0; i < this.idsAgregados.length; i++) {
-      if (this.idsAgregados[i] == id) {
-        //si esto es verdad, entonces desactivame el boton
-        return true;
-      }
-    }
-    return false;*/
     //Obtenemos los productos del servicio y comparamos con los ids agregados
     let productos = this.c.obtenerProductos();
     //usamos un foreach para iterar sobre los productos agregados en el arreglo e identificar si existe el id relacionado
@@ -176,7 +173,6 @@ export class VehiculosComponent implements OnInit {
       }
     }
     return false;
-
   }
 
 }

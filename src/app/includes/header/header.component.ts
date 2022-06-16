@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
   getContador() {
     this.contador = this.c.obtenerContador();
     this.productos = this.c.obtenerProductos();
+    console.log(this.productos);
   }
 
   valores() {
